@@ -1,0 +1,33 @@
+<%= form_for(@calificacione) do |f| %>
+  <% if @calificacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@calificacione.errors.count, "error") %> prohibited this calificacione from being saved:</h2>
+
+      <ul>
+      <% @calificacione.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Asignatura %><br />
+    <%= f.text_area :Asignatura %>
+  </div>
+  <div class="field">
+    <%= f.label :Catedratico %><br />
+    <%= f.text_field :Catedratico %>
+  </div>
+  <div class="field">
+    <%= f.label :Nota %><br />
+    <%= f.text_field :Nota %>
+  </div>
+  <div class="field">
+    <%= f.label :Observaciones %><br />
+    <%= f.text_area :Observaciones %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
